@@ -111,5 +111,13 @@ namespace E_Ticaret_2023.Controllers
             return RedirectToAction("Index");
         }
 
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
