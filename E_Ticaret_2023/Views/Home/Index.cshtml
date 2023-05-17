@@ -7,11 +7,12 @@
     <div class="row">
         <section class="col-md-4 " aria-labelledby="gettingStartedTitle">
             <h2 id="gettingStartedTitle">Kategoriler</h2>
-            <ul>
+            <ul class="list-group" >
                
+
                @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi  )
                { //class="btn btn-outline-dark"
-                   <li class="btn btn-outline-dark btn-sm " style="float:inline-start" >
+                   <li class="btn btn-outline-dark btn-sm col-md-4  " style="margin-top:4px" >
                        @item.KategoriAdi &raquo;
                    </li>
          
@@ -27,15 +28,22 @@
             <div class="row" style="margin:50px;">
 
                 @foreach (var item in (List<Urunler>)ViewBag.UrunListesi)
-                 {
-                   <div class="col-md-4" style="border: 1px solid; margin-bottom:10px;margin-right:10px">
-                       <h5>@item.UrunAdi</h5>
-                       <img src="~/Resim/@(item.UrunId).jpg" width="80" height="80"/>
-                       <p>
-                           <a href="/Urunler/Details/@item.UrunId" class="btn btn-secondary btn-sm"style="margin:4px">Ürün Detay &raquo; </a> 
-                       </p>
-                       <p> <span style="font-size:14px; font-weight:bold; float:right">  @item.UrunFiyati ₺ </span></p>
-                   </div>
+                {
+                  
+                    
+                    <div class="col-md-4 card " style="width:18rem; border: 1px solid; margin-bottom: 10px; margin-right: 10px">
+
+                        <h5>@item.UrunAdi</h5>
+                        <img src="~/Resim/@(item.UrunId).jpg" class="card-img-top" alt=" Yükleniyor.." a width="200"/>
+                        <div class="card-body">
+                          <p class="card-text">
+
+                            <a href="/Urunler/Details/@item.UrunId" class="btn btn-secondary btn-sm" style="margin:4px">Ürün Detay &raquo; </a>
+                        </p>
+
+                        </div>
+                        <p> <span style="font-size:14px; font-weight:bold; float:right">  @item.UrunFiyati ₺ </span></p>
+                    </div>
 
                  }
 

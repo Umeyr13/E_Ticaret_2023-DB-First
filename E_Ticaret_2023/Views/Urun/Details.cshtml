@@ -45,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.UrunId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Düzenle", "Edit", new { id = Model.UrunId }, new { @class = "btn btn-success btn-sm" })
+    @Html.ActionLink("Ürünler", "Index", "", new { @class = "btn btn-warning btn-sm" })
 </p>
