@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\SABAH YAZILIM\Desktop\Uygulamalar\E_Ticaret_2023\E_Ticaret_2023\Models\E_Ticaret.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\SABAH YAZILIM\Source\Repos\Umeyr13\E_Ticaret_2023-DB-First\E_Ticaret_2023\Models\E_Ticaret.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

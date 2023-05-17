@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="E_Ticaret_2023Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="E_Ticaret_2023Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -121,7 +121,7 @@
             <PropertyRef Name="UrunId" />
           </Key>
           <Property Name="UrunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="UrunAdi" Type="nchar" MaxLength="250" />
+          <Property Name="UrunAdi" Type="nchar" MaxLength="250" Nullable="false" />
           <Property Name="KategoriId" Type="int" />
           <Property Name="UrunAciklamasi" Type="nvarchar(max)" />
           <Property Name="UrunFiyati" Type="int" />
@@ -308,8 +308,7 @@
             <End Role="Urunler" EntitySet="Urunler" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="E_Ticaret_2023Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -436,7 +435,7 @@
             <PropertyRef Name="UrunId" />
           </Key>
           <Property Name="UrunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="UrunAdi" Type="String" MaxLength="250" FixedLength="true" Unicode="true" />
+          <Property Name="UrunAdi" Type="String" MaxLength="250" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="KategoriId" Type="Int32" />
           <Property Name="UrunAciklamasi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="UrunFiyati" Type="Int32" />

@@ -1,33 +1,47 @@
-﻿@{
+﻿@using E_Ticaret_2023.Models
+@{
     ViewBag.Title = "Home Page";
 }
 
 <main>
-    <section class="row" aria-labelledby="aspnetTitle">
-        <h1 id="title">ASP.NET</h1>
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
-    </section>
-
     <div class="row">
-        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-            <h2 id="gettingStartedTitle">Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <section class="col-md-4 " aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Kategoriler</h2>
+            <ul>
+               
+               @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi  )
+               { //class="btn btn-outline-dark"
+                   <li class="btn btn-outline-dark btn-sm " style="float:inline-start" >
+                       @item.KategoriAdi &raquo;
+                   </li>
+         
+               }
+
+            </ul>
         </section>
-        <section class="col-md-4" aria-labelledby="librariesTitle">
-            <h2 id="librariesTitle">Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+
+        <section class="col-md-8" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Ürünler</h2>
+            
+            <div class="row" style="margin:50px;">
+
+                @foreach (var item in (List<Urunler>)ViewBag.UrunListesi)
+                 {
+                   <div class="col-md-4" style="border: 1px solid; margin-bottom:10px;margin-right:10px">
+                       <h5>@item.UrunAdi</h5>
+                       <img src="~/Resim/@(item.UrunId).jpg" width="80" height="80"/>
+                       <p>
+                           <a href="/Urunler/Details/@item.UrunId" class="btn btn-secondary btn-sm"style="margin:4px">Ürün Detay &raquo; </a> 
+                       </p>
+                       <p> <span style="font-size:14px; font-weight:bold; float:right">  @item.UrunFiyati ₺ </span></p>
+                   </div>
+
+                 }
+
+            </div>
+
         </section>
-        <section class="col-md-4" aria-labelledby="hostingTitle">
-            <h2 id="hostingTitle">Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </section>
+       
     </div>
 </main>

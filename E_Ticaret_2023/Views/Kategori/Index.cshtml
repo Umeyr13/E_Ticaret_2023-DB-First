@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Kategoriler</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -23,11 +21,14 @@
             @Html.DisplayFor(modelItem => item.KategoriAdi)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.KategoriId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.KategoriId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.KategoriId })
+            @Html.ActionLink(" ", "Edit", new { id=item.KategoriId }, new { @class = "btn btn-sm btn-outline-success bi bi-pencil-square" })
+            @Html.ActionLink(" ", "Details", new { id=item.KategoriId }, new { @class = "btn btn-sm btn-outline-warning bi bi-file-earmark" })
+            @Html.ActionLink(" ", "Delete", new { id=item.KategoriId }, new { @class = "btn btn-sm btn-outline-danger bi bi-trash" })
         </td>
     </tr>
 }
 
 </table>
+<p>
+    @Html.ActionLink("Yeni Kategori", "Create", "", new { @class = "btn btn-info btn-sm" })
+</p>
