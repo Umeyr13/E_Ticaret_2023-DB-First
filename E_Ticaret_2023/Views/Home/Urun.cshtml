@@ -1,0 +1,54 @@
+﻿@using E_Ticaret_2023.Models
+@model Urunler
+@{
+    ViewBag.Title = "Urun";
+}
+
+<div class="row">
+    <section class="col-md-4 " aria-labelledby="gettingStartedTitle">
+        <h2 id="gettingStartedTitle">Kategoriler</h2>
+        <ul class="list-group">
+
+
+            @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi)
+            { //class="btn btn-outline-dark"
+                <li class="btn btn-outline-dark btn-sm col-md-4  " style="margin-top:4px">
+                    @item.KategoriAdi &raquo;
+                </li>
+
+            }
+
+        </ul>
+    </section>
+
+
+    <section class="col-md-8" aria-labelledby="librariesTitle">
+        <h2 id="librariesTitle">Ürün Bilgileri</h2>
+        <br />
+        <h5>@Model.UrunAdi</h5>
+        <div class="row" style="margin:50px;">
+            
+            <div class="col-md-6">
+                <img src="~/Resim/@(Model.UrunId).jpg" width="100" alt="Alternate Text" />
+            </div>
+
+            <div class="col-md-6">
+                Ürün Fiyatı: <span style="font-size:14px;font-weight:bold;float:right">@Model.UrunFiyati ₺</span>
+
+                @using (Html.BeginForm("SepeteEkle", "Sepet"))
+                {
+                    @Html.HiddenFor(x=>x.UrunId); //isimler buradan geldi sepet controler daki
+                    <input type="number" name="adet" value="1" style="width:60px" />
+                    <input type="submit" id="sepetbtn" value="Sepete Ekle" />
+
+                 }
+            </div>
+            <h1>Ürün Açıklaması</h1>
+            <p>@Model.UrunAciklamasi</p>
+
+
+        </div>
+
+    </section>
+
+</div>
