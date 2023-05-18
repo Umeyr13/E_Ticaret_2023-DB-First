@@ -11,7 +11,7 @@
                
                @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi  )
                { //class="btn btn-outline-dark"
-                   <li class="btn btn-outline-dark btn-sm " style="float:inline-start" >
+                   <li class="btn btn-outline-dark btn-sm " style="float:" >
                        @item.KategoriAdi &raquo;
                    </li>
          
@@ -32,7 +32,7 @@
                        <h5>@item.UrunAdi</h5>
                        <img src="~/Resim/@(item.UrunId).jpg" width="80" height="80"/>
                        <p>
-                           <a href="/Urunler/Details/@item.UrunId" class="btn btn-secondary btn-sm"style="margin:4px">Ürün Detay &raquo; </a> 
+                           <a href="/Home/Urun/@item.UrunId" class="btn btn-secondary btn-sm"style="margin:4px">Ürün Detay &raquo; </a> 
                        </p>
                        <p> <span style="font-size:14px; font-weight:bold; float:right">  @item.UrunFiyati ₺ </span></p>
                    </div>

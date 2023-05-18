@@ -30,5 +30,11 @@ namespace E_Ticaret_2023.Controllers
 
             return View();
         }
+        public ActionResult Urun(int id)
+        {
+            ViewBag.KategoriListesi = db.Kategoriler.ToList();
+            
+            return View();
+        }
     }
 }
