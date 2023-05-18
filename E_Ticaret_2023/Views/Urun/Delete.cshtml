@@ -16,7 +16,7 @@
         </dt>
 
         <dd>
-            <img src="~/Resim/@(Model.UrunId).jpg" width="50" height="50" />
+            <img src="~/Resim/@(Model.UrunId).jpg" width="200" height="200" />
         </dd>
 
         <dt>
@@ -56,9 +56,9 @@
     @using (Html.BeginForm()) {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
-        </div>
+<div class="form-actions no-color">
+    <input type="submit" value="Sil" class="btn btn-danger btn-sm" />
+    @Html.ActionLink("Ürünler", "Index", "", new { @class = "btn btn-warning btn-sm" })
+</div>
     }
 </div>
