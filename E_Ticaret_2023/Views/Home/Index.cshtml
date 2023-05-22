@@ -1,7 +1,7 @@
 ﻿@using E_Ticaret_2023.Models
-@model Urunler
+@*@model Urunler*@
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Anasayfa";
 }
 
 <main>
@@ -13,8 +13,9 @@
 
                @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi  )
                { //class="btn btn-outline-dark"
-                   <li class="btn btn-outline-dark btn-sm col-md-4  " style="margin-top:4px" >
-                       @item.KategoriAdi &raquo;
+                   <li class="btn btn-outline-dark btn-sm col-md-4 " style="margin-top:4px" >
+                       @Html.ActionLink(item.KategoriAdi,"Kategori",new {id =item.KategoriId});
+                     &raquo;
                    </li>
          
                }

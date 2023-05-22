@@ -12,7 +12,10 @@
             @Html.ActionLink("Merhaba " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Profil", @class = "nav-link" })
         </li>
         <li>
-            @Html.ActionLink(" ", "Index", "Sepet", routeValues: null, htmlAttributes: new { title = "Sepet", @class = "nav-link bi bi-basket" })
+            @Html.ActionLink(" ", "Index", "Sepet", routeValues: null, htmlAttributes: new { title = "Sepetim", @class = "nav-link bi bi-basket" })
+        </li>
+        <li>
+            @Html.ActionLink(" ","Index","Siparis",null, new {title="Siparişlerim", @class = "nav-link bi bi-card-list" });
         </li>
         <li><a class="nav-link" href="javascript:document.getElementById('logoutForm').submit()">Çıkış</a></li>
     </ul>
