@@ -10,6 +10,7 @@ using E_Ticaret_2023.Models;
 
 namespace E_Ticaret_2023.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class KategoriController : Controller
     {
         private E_Ticaret_2023Entities1 db = new E_Ticaret_2023Entities1();

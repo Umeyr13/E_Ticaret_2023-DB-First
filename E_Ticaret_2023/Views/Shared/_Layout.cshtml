@@ -19,8 +19,18 @@
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li>@Html.ActionLink("Anasayfa", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Kategoriler", "Index", "Kategori", new { area = "" }, new { @class = "nav-link" })</li>
-                    <li>@Html.ActionLink("Ürünler", "Index", "Urun", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (User.Identity.IsAuthenticated)//eğer kullanıcı login yaptı ise
+                    {
+
+                      if (User.IsInRole("admin")) // Bak bakalım rolü admin mi
+                       {
+                        <li>@Html.ActionLink("Kategoriler", "Index", "Kategori", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Ürünler", "Index", "Urun", new { area = "" }, new { @class = "nav-link" })</li>
+                       }
+
+
+                    }
+
                     <li>@Html.ActionLink("Hakkında", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                     <li>@Html.ActionLink("İletişim", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                 </ul>

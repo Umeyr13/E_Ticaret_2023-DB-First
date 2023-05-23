@@ -8,13 +8,17 @@ using System.Web.Mvc;
 
 namespace E_Ticaret_2023.Controllers
 {
+
+    [Authorize]
     public class SiparisController : Controller
     {
         E_Ticaret_2023Entities1 db =new E_Ticaret_2023Entities1 ();
         // GET: Siparis
-        public ActionResult Index()
+        public ActionResult Index() 
         {
-            return View(db.Siparis.ToList());
+            string userId = User.Identity.GetUserId();
+          
+            return View(db.Siparis.Where(x => x.KullaniciId == userId).ToList());
         }
 
         public ActionResult SiparisTamamla()
@@ -118,9 +122,10 @@ namespace E_Ticaret_2023.Controllers
             return View();
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
-            return View();
+            var siparisDetay = db.SiparisDetay.Where(x=>x.SiparisId == id);
+            return View(siparisDetay.ToList());
         }
     }
 }

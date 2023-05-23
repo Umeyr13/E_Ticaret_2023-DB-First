@@ -8,6 +8,8 @@ using Microsoft.AspNet.Identity;
 
 namespace E_Ticaret_2023.Controllers
 {
+
+    [Authorize] //Eğer sepete giriş yapmadan ulaşsın ben sepeti cookie de tutayım. Kullanıcı login olduğunda da sepet ıd ile kullanıcı id yi eşliyeyim desek o zaman Authorize ı kaldırmak gerekir. Şimdilik üye girişi şart olarak kalsın..
     public class SepetController : Controller
     {
         E_Ticaret_2023Entities1 db = new E_Ticaret_2023Entities1();

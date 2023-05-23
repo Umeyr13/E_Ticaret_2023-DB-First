@@ -14,7 +14,7 @@
                @foreach (var item in (List<Kategoriler>)ViewBag.KategoriListesi  )
                { //class="btn btn-outline-dark"
                    <li class="btn btn-outline-dark btn-sm col-md-4 " style="margin-top:4px" >
-                       @Html.ActionLink(item.KategoriAdi,"Kategori",new {id =item.KategoriId});
+                       @Html.ActionLink(item.KategoriAdi,"Kategori",new {id =item.KategoriId})
                      &raquo;
                    </li>
          
