@@ -15,6 +15,7 @@ namespace WebApiKategoriler
             config.MapHttpAttributeRoutes();
 
             //GELEN SONUCU JSON DATAYA ÇEVİRMEK İÇİN
+
             config.Formatters.Remove(config.Formatters.XmlFormatter);
 
 

@@ -166,11 +166,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Kategori2_denemeController.cs" />
     <Compile Include="Controllers\KategorilerController.cs" />
+    <Compile Include="Controllers\UrunlerController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Kategori.cs" />
+    <Compile Include="Models\Kategori.cs" />
     <Compile Include="Models\AspNetRoles.cs">
       <DependentUpon>E_Ticaret.tt</DependentUpon>
     </Compile>
@@ -216,6 +217,7 @@
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>E_Ticaret.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Urun.cs" />
     <Compile Include="Models\Urunler.cs">
       <DependentUpon>E_Ticaret.tt</DependentUpon>
     </Compile>

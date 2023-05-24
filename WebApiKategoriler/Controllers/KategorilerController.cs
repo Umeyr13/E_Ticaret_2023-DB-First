@@ -28,7 +28,7 @@ namespace WebApiKategoriler.Controllers
 
             // veya LinQ ile veriyi ayrıştırmayı deneyelim
 
-            kategoriler = (from x in db.Kategoriler select new Kategori { KategoriId = x.KategoriId, Kategoriadi = x.KategoriAdi }).ToList();
+            //kategoriler = (from x in db.Kategoriler select new Kategori { KategoriId = x.KategoriId, Kategoriadi = x.KategoriAdi }).ToList();
 
             return kategoriler;
         }
